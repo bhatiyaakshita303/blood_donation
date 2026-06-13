@@ -1,0 +1,97 @@
+<div class="login-wrapper">
+    <!-- Interactive Background Elements -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div class="login-container">
+        <div class="login-left">
+            <div class="brand">
+                <div class="logo">
+                    <!-- Blood drop heart logo SVG -->
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z"
+                            fill="currentColor" />
+                    </svg>
+                </div>
+                <h2>LifeDrops</h2>
+            </div>
+            <div class="hero-content">
+                <h1>Give the gift of <span>life</span>.</h1>
+                <p>Every donation can save up to three lives. Join our community of heroes today and make a difference.
+                </p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-num">10k+</span>
+                        <span class="stat-label">Donors</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">30k+</span>
+                        <span class="stat-label">Lives Saved</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-right">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h2>Welcome Back</h2>
+                    <p>Please enter your credentials to log in.</p>
+                </div>
+
+                <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="input-icon">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <input type="email" id="email" formControlName="email" placeholder="hero@example.com" />
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="input-icon">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <input type="password" id="password" formControlName="password" placeholder="••••••••" />
+                        </div>
+                    </div>
+
+                    <div class="options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" checked="checked" />
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        Sign In
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </form>
+
+                <p class="signup-prompt">
+                    Don't have an account? <a routerLink="/register" class="signup-link">Register now</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

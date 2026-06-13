@@ -1,0 +1,185 @@
+<div class="dashboard-layout">
+    <aside class="sidebar">
+        <div class="brand">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z"
+                    fill="currentColor" />
+            </svg>
+            <h2>Patient Portal</h2>
+        </div>
+
+        <nav class="nav-menu">
+            <a (click)="navigateTo('/patient/dashboard')" class="nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                Overview
+            </a>
+            <a (click)="navigateTo('/patient/request-blood')" class="nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 17H2a3 3 0 0 0 3-3h14a3 3 0 0 1 3 3z"></path>
+                    <path d="M8 17h8v3a3 3 0 0 1-3 3h-2a3 3 0 0 1-3-3v-3z"></path>
+                </svg>
+                Request Blood
+            </a>
+            <a (click)="navigateTo('/patient/request-history')" class="nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                Request History
+            </a>
+            <a (click)="navigateTo('/patient/profile')" class="nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Profile
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="logout-btn" (click)="logout()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Sign Out
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="top-header">
+            <div class="header-greeting">
+                <h1>Patient Profile</h1>
+                <p>Manage your personal information</p>
+            </div>
+            <div class="user-profile">
+                <span class="avatar" style="background:var(--primary-red);">
+                    {{ userData.firstName ? userData.firstName.charAt(0) : '' }}{{ userData.lastName ? userData.lastName.charAt(0) : '' }}
+                </span>
+                <div class="user-info">
+                    <span class="user-name">{{ userData.firstName }} {{ userData.lastName }}</span>
+                    <span class="user-role">Blood Type: {{ userData.bloodType }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div *ngIf="loading" class="loading-state">
+            <div class="spinner"></div>
+            <p>Loading profile data...</p>
+        </div>
+
+        <!-- Error State -->
+        <div *ngIf="error" class="error-state">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <p>{{ error }}</p>
+        </div>
+
+        <!-- Success Message -->
+        <div *ngIf="success" class="success-state">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <p>{{ success }}</p>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="profile-container">
+            <div class="profile-card">
+                <div class="card-header">
+                    <h2>Personal Information</h2>
+                    <button class="edit-btn" (click)="startEdit()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                        Edit Profile
+                    </button>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Full Name</label>
+                        <p *ngIf="!isEditing">{{ userData.firstName }} {{ userData.lastName }}</p>
+                        <div *ngIf="isEditing" class="inline-edit">
+                            <input type="text" [(ngModel)]="editData.firstName" placeholder="First Name" class="inline-input">
+                            <input type="text" [(ngModel)]="editData.lastName" placeholder="Last Name" class="inline-input">
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <label>Email</label>
+                        <p *ngIf="!isEditing">{{ userData.email }}</p>
+                        <input *ngIf="isEditing" type="email" [(ngModel)]="editData.email" class="inline-input">
+                    </div>
+                    <div class="info-item">
+                        <label>Phone</label>
+                        <p *ngIf="!isEditing">{{ userData.phone }}</p>
+                        <input *ngIf="isEditing" type="tel" [(ngModel)]="editData.phone" class="inline-input">
+                    </div>
+                    <div class="info-item">
+                        <label>Date of Birth</label>
+                        <p *ngIf="!isEditing">{{ userData.dateOfBirth }}</p>
+                        <input *ngIf="isEditing" type="date" [(ngModel)]="editData.dateOfBirth" class="inline-input">
+                    </div>
+                    <div class="info-item">
+                        <label>Blood Type</label>
+                        <p *ngIf="!isEditing"><span class="blood-type">{{ userData.bloodType }}</span></p>
+                        <select *ngIf="isEditing" [(ngModel)]="editData.bloodType" class="inline-input">
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    <div class="info-item">
+                        <label>Member Since</label>
+                        <p>{{ userData.createdAt ? (userData.createdAt | date:'longDate') : 'N/A' }}</p>
+                    </div>
+                </div>
+                
+                <!-- Inline Edit Actions -->
+                <div *ngIf="isEditing" class="inline-actions">
+                    <button type="button" class="btn-cancel" (click)="cancelEdit()">Cancel</button>
+                    <button type="button" class="btn-save" (click)="saveProfile()">Save Changes</button>
+                </div>
+            </div>
+            
+            <div class="profile-card">
+                <h2>Account Settings</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Account Status</label>
+                        <p><span class="status-badge" [class]="userData.isActive ? 'status-active' : 'status-inactive'">
+                            {{ userData.isActive ? 'Active' : 'Inactive' }}
+                        </span></p>
+                    </div>
+                    <div class="info-item">
+                        <label>Email Notifications</label>
+                        <p><span class="status-badge" [class]="userData.receiveNotifications ? 'status-enabled' : 'status-disabled'">
+                            {{ userData.receiveNotifications ? 'Enabled' : 'Disabled' }}
+                        </span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

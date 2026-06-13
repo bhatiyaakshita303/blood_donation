@@ -1,0 +1,243 @@
+<!-- visitor/home/home.html -->
+<div class="landing-page">
+    <nav class="navbar">
+        <div class="logo">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z"
+                    fill="currentColor" />
+            </svg>
+            <span>LifeDrops</span>
+        </div>
+        <div class="nav-links">
+            <a routerLink="/home" class="active">Home</a>
+            <a routerLink="/about">About Us</a>
+            <a routerLink="/contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+            <a routerLink="/login" class="btn-secondary">Login</a>
+            <a routerLink="/register" class="btn-primary">Register</a>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <span class="badge">Every drop counts</span>
+            <h1>Donate Blood.<br>Save Lives.</h1>
+            <p>Your single donation can save up to 3 lives. Find a blood drive near you and become a real-life hero
+                today.</p>
+            <div class="hero-buttons">
+                <a routerLink="/register" class="btn-primary hero-btn">
+                    Donate Now
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </a>
+                <a routerLink="/about" class="btn-secondary hero-btn">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="glass-card main-card">
+                <div class="card-icon red-bg">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path
+                            d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" />
+                    </svg>
+                </div>
+                <div class="card-info">
+                    <h4>Urgent Need: O-</h4>
+                    <p>Local hospitals are running low.</p>
+                </div>
+                <button class="small-btn">Help Now</button>
+            </div>
+
+            <div class="glass-card stat-card float-anim">
+                <h3>10k+</h3>
+                <p>Active Donors</p>
+            </div>
+
+            <div class="glass-card stat-card float-anim-delayed">
+                <h3>30k+</h3>
+                <p>Lives Saved</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="feature-header">
+            <h2>How it works</h2>
+            <p>Donating blood is safe, simple, and saves lives. Here is what to expect.</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg></div>
+                <h3>1. Registration</h3>
+                <p>Sign up, complete a brief health questionnaire, and schedule your donation.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg></div>
+                <h3>2. Health Check</h3>
+                <p>A quick mini-physical checking your temperature, blood pressure, and hemoglobin.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg></div>
+                <h3>3. Donation</h3>
+                <p>The actual donation takes about 8-10 minutes. Relax while you save lives.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="section-header">
+            <h2>Our Impact</h2>
+            <p>Together, we're making a difference in our community</p>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">50,000+</div>
+                <div class="stat-label">Lives Saved</div>
+                <div class="stat-description">Through our dedicated donor network</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15,000+</div>
+                <div class="stat-label">Registered Donors</div>
+                <div class="stat-description">Active members in our community</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Partner Hospitals</div>
+                <div class="stat-description">Trusted healthcare partners</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Emergency Support</div>
+                <div class="stat-description">Always available when needed most</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="section-header">
+            <h2>Hero Stories</h2>
+            <p>Real stories from our amazing donors and recipients</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">❝</div>
+                    <p>"Donating blood was easier than I expected. The staff was professional and made me feel comfortable throughout the process."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>First-time Donor</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">❝</div>
+                    <p>"Thanks to LifeDrops, my father received the blood he needed during his surgery. We're forever grateful."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div class="author-info">
+                        <h4>Michael Chen</h4>
+                        <p>Family Member</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">❝</div>
+                    <p>"As a regular donor, I appreciate how LifeDrops makes it easy to track my donations and schedule appointments."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div class="author-info">
+                        <h4>Emily Rodriguez</h4>
+                        <p>Regular Donor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Save a Life?</h2>
+            <p>Join thousands of heroes who have made the commitment to donate blood and save lives in our community.</p>
+            <div class="cta-buttons">
+                <a routerLink="/register" class="btn btn-primary btn-lg">Become a Donor</a>
+                <a routerLink="/contact" class="btn btn-secondary btn-lg">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blood Types Info Section -->
+    <section class="blood-types-section">
+        <div class="section-header">
+            <h2>Blood Type Compatibility</h2>
+            <p>Understanding which blood types can help whom</p>
+        </div>
+        <div class="blood-types-grid">
+            <div class="blood-type-info">
+                <div class="type-badge">O+</div>
+                <h4>Universal Donor</h4>
+                <p>Can donate to all positive blood types</p>
+            </div>
+            <div class="blood-type-info">
+                <div class="type-badge">O-</div>
+                <h4>Universal Donor</h4>
+                <p>Can donate to all blood types</p>
+            </div>
+            <div class="blood-type-info">
+                <div class="type-badge">A+</div>
+                <h4>Common Type</h4>
+                <p>Can donate to A+ and AB+</p>
+            </div>
+            <div class="blood-type-info">
+                <div class="type-badge">AB+</div>
+                <h4>Universal Recipient</h4>
+                <p>Can receive from all blood types</p>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,207 @@
+<div class="dashboard-layout">
+    <aside class="sidebar">
+        <div class="brand">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z"
+                    fill="currentColor" />
+            </svg>
+            <h2>LifeDrops</h2>
+        </div>
+
+        <nav class="nav-menu">
+            <a (click)="navigateTo('/donor/dashboard')" class="nav-item active">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Overview
+            </a>
+            <a (click)="navigateTo('/donor/request-blood')" class="nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Request Blood
+            </a>
+            <a (click)="navigateTo('/donor/donor-profile')" class="nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                Profile
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="logout-btn" (click)="logout()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                </svg>
+                Sign Out
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <!-- Error State -->
+        <div *ngIf="error" class="error-state">
+            <div class="error-icon">⚠️</div>
+            <h3>Error Loading Dashboard</h3>
+            <p>{{ error }}</p>
+            <button class="btn-primary" (click)="loadDonorData()">Try Again</button>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div *ngIf="!error">
+            <div class="top-header">
+                <div class="header-greeting">
+                    <h1>Welcome Back, {{ userData.firstName || 'Donor' }}</h1>
+                    <p>Hero Donor | Blood Type {{ stats.bloodType }}</p>
+                </div>
+                <div class="user-profile">
+                    <span class="avatar">{{ userData.firstName ? userData.firstName.charAt(0) : '' }}{{
+                        userData.lastName ? userData.lastName.charAt(0) : '' }}</span>
+                    <button class="btn-primary"
+                        style="padding: 0.75rem 1.5rem; border:none; border-radius: 8px; color:white; font-weight: 600; cursor: pointer;">Donate
+                        Now</button>
+                </div>
+            </div>
+
+            <div class="overview-grid">
+                <div class="stat-card-dash">
+                    <div class="stat-header">
+                        <div class="stat-icon icon-red">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                fill="currentColor">
+                                <path
+                                    d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>{{ stats.totalDonations }}</h3>
+                    <p>Total Donations</p>
+                </div>
+                <div class="stat-card-dash">
+                    <div class="stat-header">
+                        <div class="stat-icon icon-blue">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>{{ stats.bloodType }}</h3>
+                    <p>Blood Group</p>
+                </div>
+                <div class="stat-card-dash">
+                    <div class="stat-header">
+                        <div class="stat-icon icon-green">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>{{ stats.lastDonation }}</h3>
+                    <p>Last Donation</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+
+                <div class="section-header">
+                    <h2>Donation History</h2>
+                </div>
+
+                <table class="data-table" *ngIf="donations.length > 0">
+
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Hospital</th>
+                            <th>Units</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr *ngFor="let d of donations">
+
+                            <td>{{ d.completedAt || d.updatedAt | date:'mediumDate' }}</td>
+                            <td>{{ d.hospital }}</td>
+                            <td>{{ d.quantity }} Unit</td>
+
+                            <td>
+                                <span class="status-badge status-approved">
+                                    Completed
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+                <div *ngIf="donations.length === 0" class="empty-state">
+
+                    <h3>No Donation History</h3>
+                    <p>You haven't completed any donations yet.</p>
+
+                </div>
+
+            </div>
+
+            <div class="table-section">
+                <div class="table-header">
+                    <h3>Blood Stocks ({{ bloodStocks.length }})</h3>
+                    <div class="table-controls">
+                        <span class="total-units">Total Units: {{ getTotalUnits() }}</span>
+                        <button class="btn-primary" (click)="loadBloodStocks()">Refresh</button>
+                    </div>
+                </div>
+
+                <table class="data-table" *ngIf="bloodStocks.length > 0">
+                    <thead>
+                        <tr>
+                            <th>Blood Type</th>
+                            <th>Units Available</th>
+                            <th>Status</th>
+                            <th>Last Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let stock of bloodStocks">
+                            <td>
+                                <span class="blood-type-badge">{{ stock.bloodType }}</span>
+                            </td>
+                            <td>{{ stock.units }}</td>
+                            <td>{{ stock.status }}</td>
+                            <td>{{ stock.lastUpdated | date:'short' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Empty State -->
+                <div *ngIf="bloodStocks.length === 0" class="empty-state">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <h3>No Blood Stocks Found</h3>
+                    <p>No blood stocks have been added yet.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

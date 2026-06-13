@@ -1,0 +1,197 @@
+@import '../../donor/dashboard/dashboard.css';
+
+/* Header spacing */
+.top-header{
+  margin-bottom:25px;
+}
+
+.top-header h1{
+  font-size:26px;
+  font-weight:600;
+}
+
+.top-header p{
+  color:#6b7280;
+  font-size:14px;
+}
+
+
+/* Request grid */
+
+.request-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:20px;
+}
+
+
+/* Request Card */
+
+.request-card{
+  background:#fff;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.06);
+  transition:0.3s;
+}
+
+.request-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.08);
+}
+
+
+/* Header */
+
+.request-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.request-header h3{
+  font-size:18px;
+  font-weight:600;
+}
+
+
+/* Blood badge */
+
+.blood-badge{
+  background:#ef4444;
+  color:white;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:600;
+}
+
+
+/* Details */
+
+.request-details p{
+  margin:6px 0;
+  font-size:14px;
+  color:#374151;
+}
+
+
+/* Urgency colors */
+
+.urgency-normal{
+  color:#16a34a;
+  font-weight:600;
+}
+
+.urgency-urgent{
+  color:#f59e0b;
+  font-weight:600;
+}
+
+.urgency-critical{
+  color:#dc2626;
+  font-weight:600;
+}
+
+
+/* Action buttons */
+
+.request-actions{
+  margin-top:15px;
+  display:flex;
+  gap:10px;
+}
+
+.btn-edit{
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:7px 14px;
+  border-radius:8px;
+  font-size:13px;
+  cursor:pointer;
+}
+
+.btn-edit:hover{
+  background:#1e40af;
+}
+
+.btn-delete{
+  background:#dc2626;
+  color:white;
+  border:none;
+  padding:7px 14px;
+  border-radius:8px;
+  font-size:13px;
+  cursor:pointer;
+}
+
+.btn-delete:hover{
+  background:#991b1b;
+}
+
+.btn-status{
+background: #28a745;
+color: white;
+border: none;
+padding: 8px 16px;
+border-radius: 6px;
+font-size: 14px;
+font-weight: 600;
+cursor: default;
+opacity: 0.9;
+transition: all 0.3s ease;
+}
+
+.btn-status:hover{
+background: #218838;
+transform: translateY(-1px);
+box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.btn-reject{
+background: #dc2626;
+color: white;
+border: none;
+padding: 8px 16px;
+border-radius: 6px;
+font-size: 14px;
+font-weight: 600;
+cursor: default;
+opacity: 0.9;
+transition: all 0.3s ease;
+}
+
+.btn-reject:hover{
+background: #991b1b ;
+transform: translateY(-1px);
+box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+/* Empty state */
+
+.empty-state{
+  text-align:center;
+  margin-top:40px;
+  color:#6b7280;
+}
+
+.empty-icon{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+
+/* Error state */
+
+.error-state{
+  text-align:center;
+  margin-top:40px;
+  color:#b91c1c;
+}
+
+.error-icon{
+  font-size:40px;
+  margin-bottom:10px;
+}

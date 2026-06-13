@@ -1,0 +1,195 @@
+@import '../dashboard/dashboard.css';
+
+/* Request Grid */
+
+.request-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+
+/* Request Card */
+
+.request-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.request-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Card Header */
+
+.request-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.request-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/* Blood Badge */
+
+.blood-badge {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+/* Request Details */
+
+.request-details p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #374151;
+}
+
+
+/* Buttons */
+
+.request-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 15px;
+}
+
+/* Common button styles */
+.request-actions {
+    display: flex;
+    justify-content: flex-start;  /* Align buttons left */
+    gap: 15px;                     /* Space between buttons */
+    margin-top: 1rem;
+    flex-wrap: wrap;               /* Wrap on smaller screens */
+}
+
+/* Common styles for both buttons */
+.request-actions button {
+    padding: 12px 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 180px;
+    height: 48px;                  /* Same height for both buttons */
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Contact Patient - outlined style */
+.request-actions button.contact-btn {
+    background: #fff;
+    color: #FF1E3C;
+    border: 2px solid #FF1E3C;
+}
+
+.request-actions button.contact-btn:hover {
+    background: #FF1E3C;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255,0,0,0.2);
+}
+
+/* Willing to Donate - filled style */
+.request-actions button.donate-btn {
+    background: linear-gradient(135deg, #FF4B5C, #FF1E3C);
+    color: #fff;
+}
+
+.request-actions button.donate-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255,0,0,0.3);
+}
+
+/* Secondary outlined red button */
+.btn-secondary {
+    background: #fff;
+    color: #FF1E3C;
+    border: 2px solid #FF1E3C;
+}
+
+.btn-secondary:hover {
+    background: #FF1E3C;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.25);
+}
+
+
+/* Empty State */
+
+.empty-state {
+    text-align: center;
+    margin-top: 3rem;
+    color: #6b7280;
+}
+
+.empty-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
+/* Error State */
+
+.error-state {
+    text-align: center;
+    margin-top: 2rem;
+    color: #b91c1c;
+}
+
+.error-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+
+/* Urgency Colors */
+
+.urgency-normal {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.urgency-urgent {
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+.urgency-critical {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+
+/* Responsive */
+
+@media (max-width:768px) {
+
+    .request-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .request-actions {
+        flex-direction: column;
+    }
+
+}

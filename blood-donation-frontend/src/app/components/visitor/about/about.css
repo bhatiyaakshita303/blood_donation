@@ -1,0 +1,355 @@
+@import '../home/home.css';
+
+/* About Content Section */
+.about-content {
+    padding: 4rem 5%;
+    background: white;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Mission Grid */
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 5rem;
+}
+
+.mission-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--bg-color);
+    border-radius: var(--border-radius-xl);
+    transition: all var(--transition-normal);
+}
+
+.mission-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-red);
+    color: white;
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem auto;
+}
+
+.card-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.mission-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.mission-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    color: var(--text-light);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Statistics Section */
+.stats-section {
+    margin-bottom: 5rem;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+    border-radius: var(--border-radius-xl);
+    color: white;
+}
+
+.stats-section .section-header h2,
+.stats-section .section-header p {
+    color: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 2rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius-lg);
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.stat-label {
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* How We Work Section */
+.how-we-work {
+    margin-bottom: 5rem;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.work-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg-color);
+    border-radius: var(--border-radius-lg);
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.work-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.work-number {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-red);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin: 0 auto 1.5rem auto;
+}
+
+.work-item h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.work-item p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Team Section */
+.team-section {
+    margin-bottom: 5rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.team-member {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg-color);
+    border-radius: var(--border-radius-lg);
+    transition: all var(--transition-normal);
+}
+
+.team-member:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.member-avatar {
+    width: 100px;
+    height: 100px;
+    background: var(--primary-red);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+}
+
+.member-avatar svg {
+    width: 50px;
+    height: 50px;
+}
+
+.team-member h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.member-title {
+    color: var(--primary-red);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.member-bio {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.875rem;
+}
+
+/* Partners Section */
+.partners-section {
+    margin-bottom: 3rem;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.partner-item {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border: 2px solid var(--input-border);
+    border-radius: var(--border-radius-lg);
+    transition: all var(--transition-normal);
+}
+
+.partner-item:hover {
+    border-color: var(--primary-red);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.partner-logo {
+    width: 60px;
+    height: 60px;
+    background: var(--bg-color);
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+    color: var(--primary-red);
+}
+
+.partner-logo svg {
+    width: 30px;
+    height: 30px;
+}
+
+.partner-item h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .mission-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .work-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        padding: 2rem 5%;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .partners-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .stats-section {
+        padding: 3rem 0;
+    }
+    
+    .mission-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .mission-card,
+    .work-item,
+    .team-member,
+    .partner-item {
+        padding: 1.5rem;
+    }
+}

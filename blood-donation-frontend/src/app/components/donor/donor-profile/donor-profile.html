@@ -1,0 +1,137 @@
+<div class="dashboard-layout">
+    <aside class="sidebar">
+        <div class="brand">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z"
+                    fill="currentColor" />
+            </svg>
+            <h2>LifeDrops</h2>
+        </div>
+        <nav class="nav-menu">
+            <a (click)="navigateTo('/donor/dashboard')" class="nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Overview
+            </a>
+            <a (click)="navigateTo('/donor/request-blood')" class="nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Request Blood
+            </a>
+            <a (click)="navigateTo('/donor/donor-profile')" class="nav-item active">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                Profile
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="logout-btn" (click)="logout()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                </svg>
+                Sign Out
+            </button>
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+        <div class="top-header">
+            <h1>My Profile</h1>
+        </div>
+
+        <!-- Success/Error Messages -->
+        <div *ngIf="success" class="alert alert-success">
+            {{ success }}
+        </div>
+        <div *ngIf="error" class="alert alert-error">
+            {{ error }}
+        </div>
+
+        <div class="content-section" style="max-width: 800px;">
+            <div class="profile-card">
+                <div class="card-header">
+                    <h2>Personal Information</h2>
+                    <button class="edit-btn" (click)="startEdit()" *ngIf="!isEditing">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                        Edit Profile
+                    </button>
+                </div>
+
+                <!-- Avatar Section -->
+                <div class="avatar-section">
+                    <div class="avatar" style="width: 100px; height: 100px; font-size: 2.5rem;">
+                        {{ userData.firstName ? userData.firstName.charAt(0) : '' }}{{ userData.lastName ?
+                        userData.lastName.charAt(0) : '' }}
+                    </div>
+                    <button class="btn-text">Change Photo</button>
+                </div>
+
+                <!-- Profile Information -->
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Full Name</label>
+                        <p *ngIf="!isEditing">{{ userData.firstName }} {{ userData.lastName }}</p>
+                        <div *ngIf="isEditing" class="inline-edit">
+                            <input type="text" [(ngModel)]="editData.firstName" placeholder="First Name"
+                                class="inline-input">
+                            <input type="text" [(ngModel)]="editData.lastName" placeholder="Last Name"
+                                class="inline-input">
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <label>Email</label>
+                        <p *ngIf="!isEditing">{{ userData.email }}</p>
+                        <input *ngIf="isEditing" type="email" [(ngModel)]="editData.email" class="inline-input">
+                    </div>
+                    <div class="info-item">
+                        <label>Phone</label>
+                        <p *ngIf="!isEditing">{{ userData.phone }}</p>
+                        <input *ngIf="isEditing" type="tel" [(ngModel)]="editData.phone" class="inline-input">
+                    </div>
+                    <div class="info-item">
+                        <label>Blood Type</label>
+                        <p *ngIf="!isEditing"><span class="blood-type">{{ userData.bloodType }}</span></p>
+                        <select *ngIf="isEditing" [(ngModel)]="editData.bloodType" class="inline-input">
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    <div class="info-item">
+                        <label>Date of Birth</label>
+                        <p *ngIf="!isEditing">{{ userData.dateOfBirth }}</p>
+                        <input *ngIf="isEditing" type="date" [(ngModel)]="editData.dateOfBirth" class="inline-input">
+                    </div>
+                </div>
+
+                <!-- Inline Edit Actions -->
+                <div *ngIf="isEditing" class="inline-actions">
+                    <button type="button" class="btn-cancel" (click)="cancelEdit()">Cancel</button>
+                    <button type="button" class="btn-save" (click)="saveProfile()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

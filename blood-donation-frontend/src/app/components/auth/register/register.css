@@ -1,0 +1,325 @@
+@import '../login/login.css';
+
+/* Additional styles specific to Register */
+.input-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-row .input-group {
+    flex: 1;
+}
+
+.select-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.select-container {
+    flex: 1;
+    position: relative;
+}
+
+.select-container select {
+    width: 100%;
+    padding: 1rem 2rem 1rem 1rem;
+    border: 2px solid transparent;
+    background: var(--input-bg);
+    border-radius: var(--border-radius-md);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    color: var(--text-dark);
+    appearance: none;
+    -webkit-appearance: none;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+}
+
+.select-container select:focus {
+    outline: none;
+    background: white;
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.1);
+}
+
+.select-arrow {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: var(--text-light);
+    pointer-events: none;
+}
+
+/* Options styling for checkboxes */
+.options {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    color: var(--text-light);
+    user-select: none;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    height: 18px;
+    width: 18px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--primary-red);
+    border-color: var(--primary-red);
+}
+
+.checkmark:after {
+    content: "";
+    display: none;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.signup-link {
+    color: var(--primary-red);
+    font-weight: 600;
+    transition: color var(--transition-fast);
+}
+
+.signup-link:hover {
+    color: var(--dark-red);
+    text-decoration: underline;
+}
+
+/* Adjustments for Register Layout compared to Login */
+.form-header {
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.25rem;
+}
+
+/* Date input styling */
+input[type="date"] {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 2px solid transparent;
+    background: var(--input-bg);
+    border-radius: var(--border-radius-md);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: all var(--transition-normal);
+}
+
+input[type="date"]:focus {
+    outline: none;
+    background: white;
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.1);
+}
+
+/* Remove calendar icon in some browsers */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+/* Enhanced Modern Button Styling */
+.btn-primary {
+    background-color: var(--primary-red);
+    color: white;
+    border: 2px solid var(--primary-red);
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 8px 32px rgba(211, 47, 47, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.15), 
+        rgba(255, 255, 255, 0.05),
+        transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-red);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary svg {
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.btn-primary:hover svg {
+    transform: translateX(4px) scale(1.1);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.btn-primary:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 0 0 3px rgba(255, 255, 255, 0.2),
+        0 12px 40px rgba(211, 47, 47, 0.25);
+}
+
+.btn-primary:disabled {
+    background: rgba(150, 150, 150, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-color: rgba(255, 255, 255, 0.1);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.btn-primary:disabled:hover {
+    background: rgba(150, 150, 150, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: none;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.btn-primary:disabled:hover::before {
+    display: none;
+}
+
+.btn-primary:disabled:hover::after {
+    display: none;
+}
+
+.btn-primary:disabled:hover svg {
+    transform: none;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .input-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .select-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .options {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .login-right {
+        padding: 2rem 1.5rem;
+    }
+    
+    .form-header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .input-group {
+        margin-bottom: 1rem;
+    }
+}

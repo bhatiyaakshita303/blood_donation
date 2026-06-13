@@ -1,0 +1,222 @@
+@import '../dashboard/dashboard.css';
+
+/* Profile Card Styles */
+.profile-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+}
+
+.card-header {
+    background: #f8fafc;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.edit-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-red);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.edit-btn:hover {
+    background: var(--dark-red);
+    transform: translateY(-1px);
+}
+
+.edit-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Avatar Section */
+.avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.avatar {
+    background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--primary-red);
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.875rem;
+}
+
+.btn-text:hover {
+    color: var(--dark-red);
+}
+
+/* Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 0 2rem 2rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.info-item p {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #1f2937;
+    margin: 0;
+}
+
+.blood-type {
+    background: rgba(220, 38, 38, 0.1);
+    color: var(--primary-red);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Inline Edit Styles */
+.inline-edit {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.inline-input {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background: white;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.inline-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.inline-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid #e5e7eb;
+    background: #f8fafc;
+}
+
+.btn-cancel,
+.btn-save {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-cancel {
+    background: #f3f4f6;
+    color: #6b7280;
+    border: 1px solid #d1d5db;
+}
+
+.btn-cancel:hover {
+    background: #e5e7eb;
+    color: #4b5563;
+}
+
+.btn-save {
+    background: #e35555;
+    color: white;
+}
+
+.btn-save:hover:not(:disabled) {
+    background: #c73737;
+}
+
+.btn-save:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Alert Styles */
+.alert {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: #10b981;
+    color: white;
+}
+
+.alert-error {
+    background: #ef4444;
+    color: white;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.form-group p {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
