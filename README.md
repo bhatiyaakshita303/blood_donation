@@ -12,7 +12,7 @@
   <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" />
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express" />
-  <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
+  <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
 </div>
 
 <br />
@@ -21,7 +21,7 @@
 
 The **Blood Donation Management System** is a robust application meticulously designed to bridge the crucial gap between blood donors, hospitals, and recipients. It allows users to register as Donors, Patients, or Administrators with role-based dashboards and interactions.
 
-The project features a **RESTful backend API** built with Node.js, Express, and a lightweight SQLite database, coupled with a highly dynamic **frontend application** developed in Angular.
+The project features a **RESTful backend API** built with Node.js, Express, and a versatile MongoDB database, coupled with a highly dynamic **frontend application** developed in Angular.
 
 ---
 
@@ -33,7 +33,7 @@ The project features a **RESTful backend API** built with Node.js, Express, and 
   <li>🤝 <strong>Donor Management:</strong> Donors can easily track their past donations and schedule new ones.</li>
   <li>🔒 <strong>Secure Authentication:</strong> Password protection via robust <code>bcrypt</code> hashing.</li>
   <li>📱 <strong>Responsive UI:</strong> An intuitive and accessible frontend interface created with Angular.</li>
-  <li>🛠️ <strong>Lightweight Backend:</strong> Utilizes SQLite for swift setup and localized data management natively.</li>
+  <li>🛠️ <strong>Scalable Database:</strong> Utilizes MongoDB for efficient, document-based data management.</li>
 </ul>
 
 ---
@@ -55,7 +55,7 @@ The project features a **RESTful backend API** built with Node.js, Express, and 
   </tr>
   <tr>
     <td>🗄️ <strong>Database</strong></td>
-    <td>SQLite3</td>
+    <td>MongoDB</td>
   </tr>
   <tr>
     <td>🔐 <strong>Security</strong></td>
