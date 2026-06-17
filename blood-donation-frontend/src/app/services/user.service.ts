@@ -44,7 +44,7 @@ export interface UserResponse {
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:5000/api/users';
+  private apiUrl = 'https://blood-donation-f1uf.onrender.com/api/users';
 
   constructor(private http: HttpClient, private auth: Auth) {}
 

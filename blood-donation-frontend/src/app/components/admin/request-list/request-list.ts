@@ -28,7 +28,7 @@ export class RequestList implements OnInit {
 
   loadRequests() {
     const token = this.auth.getToken();
-    this.http.get('http://localhost:5000/api/blood-requests', {
+    this.http.get('https://blood-donation-f1uf.onrender.com/api/blood-requests', {
       headers: { Authorization: `Bearer ${token}` }
     }).subscribe({
       next: (res: any) => this.requests = res.data || [],
@@ -38,7 +38,7 @@ export class RequestList implements OnInit {
 
   markCompleted(id: string) {
 
-    this.http.patch(`http://localhost:5000/api/requests/${id}`, {
+    this.http.patch(`https://blood-donation-f1uf.onrender.com/api/requests/${id}`, {
       status: 'completed'
     }).subscribe({
       next: (res: any) => {
@@ -54,21 +54,21 @@ export class RequestList implements OnInit {
 
   approveRequest(request: any) {
     const token = this.auth.getToken();
-    this.http.patch(`http://localhost:5000/api/blood-requests/${request._id}/approve`, {}, {
+    this.http.patch(`https://blood-donation-f1uf.onrender.com/api/blood-requests/${request._id}/approve`, {}, {
       headers: { Authorization: `Bearer ${token}` }
     }).subscribe(() => this.loadRequests());
   }
 
   rejectRequest(request: any) {
     const token = this.auth.getToken();
-    this.http.patch(`http://localhost:5000/api/blood-requests/${request._id}/reject`, {}, {
+    this.http.patch(`https://blood-donation-f1uf.onrender.com/api/blood-requests/${request._id}/reject`, {}, {
       headers: { Authorization: `Bearer ${token}` }
     }).subscribe(() => this.loadRequests());
   }
 
   completeRequest(request: any) {
     const token = this.auth.getToken();
-    this.http.patch(`http://localhost:5000/api/blood-requests/${request._id}/complete`, {}, {
+    this.http.patch(`https://blood-donation-f1uf.onrender.com/api/blood-requests/${request._id}/complete`, {}, {
       headers: { Authorization: `Bearer ${token}` }
     }).subscribe(() => this.loadRequests());
   }

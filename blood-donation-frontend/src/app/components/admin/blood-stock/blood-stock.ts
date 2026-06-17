@@ -44,7 +44,7 @@ export class BloodStock implements OnInit {
     console.log('Loading blood stocks...');
     this.error = '';
 
-    this.http.get<any>('http://localhost:5000/api/blood').subscribe({
+    this.http.get<any>('https://blood-donation-f1uf.onrender.com/api/blood').subscribe({
       next: (response) => {
         console.log('Blood stocks response:', response);
         if (response && response.data) {
@@ -71,7 +71,7 @@ export class BloodStock implements OnInit {
     });
 
     this.http.put(
-      `http://localhost:5000/api/blood/${stock._id}`,
+      `https://blood-donation-f1uf.onrender.com/api/blood/${stock._id}`,
       {
         bloodType: stock.bloodType,
         units: stock.units,
@@ -98,7 +98,7 @@ export class BloodStock implements OnInit {
     });
 
     this.http.delete(
-      `http://localhost:5000/api/blood/${stock._id}`,
+      `https://blood-donation-f1uf.onrender.com/api/blood/${stock._id}`,
       { headers }
     ).subscribe({
       next: (response) => {
@@ -126,7 +126,7 @@ export class BloodStock implements OnInit {
 
     this.error = '';
 
-    this.http.post<any>('http://localhost:5000/api/blood', {
+    this.http.post<any>('https://blood-donation-f1uf.onrender.com/api/blood', {
       bloodType: this.newBloodType,
       units: this.newUnits,
       lastUpdated: new Date().toISOString()

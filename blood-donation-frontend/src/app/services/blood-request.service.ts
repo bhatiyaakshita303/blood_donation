@@ -50,7 +50,7 @@ export interface CreateBloodRequest {
   providedIn: 'root'
 })
 export class BloodRequestService {
-  private apiUrl = 'http://localhost:5000/api/blood-requests';
+  private apiUrl = 'https://blood-donation-f1uf.onrender.com/api/blood-requests';
 
   constructor(private http: HttpClient, private auth: Auth) {}
 

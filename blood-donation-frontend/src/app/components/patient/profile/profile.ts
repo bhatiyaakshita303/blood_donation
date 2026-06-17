@@ -37,7 +37,7 @@ export class Profile implements OnInit {
     const currentUser = this.auth.getCurrentUser();
     console.log('Current user from auth:', currentUser);
 
-    this.http.get('http://localhost:5000/api/test/users')
+    this.http.get('https://blood-donation-f1uf.onrender.com/api/test/users')
       .subscribe({
         next: (response: any) => {
           if (response && response.data && response.data.length > 0) {
@@ -113,7 +113,7 @@ export class Profile implements OnInit {
     console.log('Making API call to get patients...');
 
     // Use the working endpoint to get all users and find the patient
-    this.http.get('http://localhost:5000/api/test/users')
+    this.http.get('https://blood-donation-f1uf.onrender.com/api/test/users')
       .subscribe({
         next: (response: any) => {
           console.log('✅ API Response:', response);
@@ -173,7 +173,7 @@ export class Profile implements OnInit {
     delete updateData.isActive;
 
     // Try to save without authentication
-    this.http.put(`http://localhost:5000/api/users/${this.userData._id}`, updateData)
+    this.http.put(`https://blood-donation-f1uf.onrender.com/api/users/${this.userData._id}`, updateData)
       .subscribe({
         next: (response: any) => {
           if (response && response.data) {

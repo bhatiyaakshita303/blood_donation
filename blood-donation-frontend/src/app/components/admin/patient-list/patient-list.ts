@@ -66,7 +66,7 @@ export class PatientList implements OnInit {
     this.error = '';
     
     // Simple fetch without async/await
-    fetch('http://localhost:5000/api/users/role/patient?limit=10')
+    fetch('https://blood-donation-f1uf.onrender.com/api/users/role/patient?limit=10')
       .then(response => {
         console.log('✅ Response received:', response);
         if (response.ok) {

@@ -41,7 +41,7 @@ export class Dashboard implements OnInit {
 
   loadBloodStocks() {
     const token = this.auth.getToken();
-    this.http.get('http://localhost:5000/api/blood', {
+    this.http.get('https://blood-donation-f1uf.onrender.com/api/blood', {
       headers: { Authorization: `Bearer ${token}` }
     }).subscribe({
       next: (res: any) => {
@@ -57,7 +57,7 @@ export class Dashboard implements OnInit {
 
     const token = this.auth.getToken();
 
-    this.http.get('http://localhost:5000/api/requests/donor-history', {
+    this.http.get('https://blood-donation-f1uf.onrender.com/api/requests/donor-history', {
       headers: { Authorization: `Bearer ${token}` }
     }).subscribe((res: any) => {
       console.log("API RESPONSE:", res);
@@ -81,7 +81,7 @@ export class Dashboard implements OnInit {
     console.log('Current user from auth:', currentUser);
 
     // Always get user data from API to ensure we have a real database user
-    this.http.get('http://localhost:5000/api/test/users')
+    this.http.get('https://blood-donation-f1uf.onrender.com/api/test/users')
       .subscribe({
         next: (response: any) => {
           if (response && response.data && response.data.length > 0) {

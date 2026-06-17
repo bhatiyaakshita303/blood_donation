@@ -36,7 +36,7 @@ export class RequestHistory implements OnInit {
   loadPatientRequests() {
     const token = this.auth.getToken();
     this.loading = true;
-    this.http.get('http://localhost:5000/api/blood-requests/my-requests', {
+    this.http.get('https://blood-donation-f1uf.onrender.com/api/blood-requests/my-requests', {
       headers: { Authorization: `Bearer ${token}` }
     }).subscribe({
       next: (res: any) => {
@@ -59,7 +59,7 @@ export class RequestHistory implements OnInit {
     const token = this.auth.getToken();
 
     this.http.patch(
-      `http://localhost:5000/api/requests/contact-donor/${id}`,
+      `https://blood-donation-f1uf.onrender.com/api/requests/contact-donor/${id}`,
       {},
       { headers: { Authorization: `Bearer ${token}` } }
     ).subscribe({
@@ -84,7 +84,7 @@ export class RequestHistory implements OnInit {
     const token = this.auth.getToken();
 
     this.http.patch(
-      `http://localhost:5000/api/requests/donation-done/${id}`,
+      `https://blood-donation-f1uf.onrender.com/api/requests/donation-done/${id}`,
       {},
       { headers: { Authorization: `Bearer ${token}` } }
     ).subscribe({

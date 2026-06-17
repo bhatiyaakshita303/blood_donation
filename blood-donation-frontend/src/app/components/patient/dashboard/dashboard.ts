@@ -30,7 +30,7 @@ export class Dashboard implements OnInit {
     if (user) {
       const token = this.auth.getToken();
 
-      this.http.get('http://localhost:5000/api/users/profile', {
+      this.http.get('https://blood-donation-f1uf.onrender.com/api/users/profile', {
         headers: { Authorization: `Bearer ${token}` }
       }).subscribe((res: any) => {
         this.userData = res.data;
@@ -44,7 +44,7 @@ export class Dashboard implements OnInit {
 
   loadBloodStocks() {
     const token = this.auth.getToken();
-    this.http.get('http://localhost:5000/api/blood', {
+    this.http.get('https://blood-donation-f1uf.onrender.com/api/blood', {
       headers: { Authorization: `Bearer ${token}` }
     }).subscribe({
       next: (res: any) => {
@@ -61,7 +61,7 @@ export class Dashboard implements OnInit {
 
     const token = this.auth.getToken();
 
-    this.http.get('http://localhost:5000/api/users/profile', {
+    this.http.get('https://blood-donation-f1uf.onrender.com/api/users/profile', {
       headers: { Authorization: `Bearer ${token}` }
     }).subscribe({
       next: (res: any) => {

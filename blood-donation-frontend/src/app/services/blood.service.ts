@@ -10,11 +10,11 @@ export class BloodService {
   constructor(private http: HttpClient) {}
 
   updateBloodStock(id:any,data:any){
-    return this.http.put(`http://localhost:5000/api/blood/${id}`,data);
+    return this.http.put(`https://blood-donation-f1uf.onrender.com/api/blood/${id}`,data);
   }
 
   deleteBloodStock(id:any){
-    return this.http.delete(`http://localhost:5000/api/blood/${id}`);
+    return this.http.delete(`https://blood-donation-f1uf.onrender.com/api/blood/${id}`);
   }
 
 }

@@ -76,7 +76,7 @@ export class DonorProfile implements OnInit {
     delete updateData.role;
     delete updateData.isActive;
 
-    this.http.put(`http://localhost:5000/api/users/${this.userData._id}`, updateData)
+    this.http.put(`https://blood-donation-f1uf.onrender.com/api/users/${this.userData._id}`, updateData)
       .subscribe({
         next: (response: any) => {
           if (response && response.data) {

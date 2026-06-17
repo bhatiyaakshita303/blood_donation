@@ -66,7 +66,7 @@ export class DonorList implements OnInit {
     this.error = '';
     
     // Simple fetch without async/await
-    fetch('http://localhost:5000/api/users/role/donor?limit=10')
+    fetch('https://blood-donation-f1uf.onrender.com/api/users/role/donor?limit=10')
       .then(response => {
         console.log('✅ Response received:', response);
         if (response.ok) {
@@ -101,7 +101,7 @@ export class DonorList implements OnInit {
     this.donors = []; // Clear array for fresh data
 
     // Direct HTTP call - no loading state
-    this.http.get('http://localhost:5000/api/users/role/donor?limit=10').subscribe({
+    this.http.get('https://blood-donation-f1uf.onrender.com/api/users/role/donor?limit=10').subscribe({
       next: (response: any) => {
         console.log('✅ Raw response:', response);
         console.log('Response type:', typeof response);

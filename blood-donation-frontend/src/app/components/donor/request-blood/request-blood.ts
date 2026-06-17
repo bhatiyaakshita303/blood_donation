@@ -37,7 +37,7 @@ export class RequestBlood implements OnInit {
   loadBloodRequests() {
     const token = this.auth.getToken();
     this.loading = true;
-    this.http.get('http://localhost:5000/api/blood-requests/matching', {
+    this.http.get('https://blood-donation-f1uf.onrender.com/api/blood-requests/matching', {
       headers: { Authorization: `Bearer ${token}` }
     }).subscribe({
       next: (res: any) => {
@@ -57,7 +57,7 @@ export class RequestBlood implements OnInit {
     const token = this.auth.getToken();
 
     this.http.patch(
-      `http://localhost:5000/api/blood-requests/${request._id}/respond`,
+      `https://blood-donation-f1uf.onrender.com/api/blood-requests/${request._id}/respond`,
       { donorId: this.userData._id },
       { headers: { Authorization: `Bearer ${token}` } }
     ).subscribe(() => {

@@ -37,7 +37,7 @@ export interface RegisterResponse {
   providedIn: 'root',
 })
 export class Auth {
-  private apiUrl = 'http://localhost:5000/api';
+  private apiUrl = 'https://blood-donation-f1uf.onrender.com/api';
 
   constructor(
     private http: HttpClient,
