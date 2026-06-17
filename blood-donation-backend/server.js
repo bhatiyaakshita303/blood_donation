@@ -18,9 +18,11 @@ app.use(express.json());
 
 // Enable CORS
 app.use(cors({
-    origin: ['http://localhost:4200', 'http://localhost:8080', 'http://127.0.0.1:4200'],
+    origin: ['http://localhost:4200', 'http://localhost:8080', 'http://127.0.0.1:4200', 'https://blood-donation-three-eta.vercel.app/'],
     credentials: true
 }));
+
+app.options('*', cors());
 
 // Route files
 const authRoutes = require('./routes/authRoutes');
