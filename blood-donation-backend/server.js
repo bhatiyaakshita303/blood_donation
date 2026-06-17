@@ -22,7 +22,7 @@ app.use(cors({
     credentials: true
 }));
 
-app.options('*', cors());
+app.options('(.*)', cors());
 
 // Route files
 const authRoutes = require('./routes/authRoutes');
